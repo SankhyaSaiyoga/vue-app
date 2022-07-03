@@ -21,15 +21,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      
-      <v-toolbar-title v-text="title" />
-
-    </v-app-bar>
+  
     <v-main>
       <v-container>
         <Nuxt />
@@ -88,7 +80,6 @@ export default {
           to: '/'
         }
       ],
-      title: 'Cashier'
     }
   }
 }

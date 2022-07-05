@@ -1,9 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-      v-model="sideDrawer"
-      app
-    >
+    <v-navigation-drawer v-model="sideDrawer" app>
       <v-list>
         <v-list-item
           v-for="(item, i) in sideMenu"
@@ -21,66 +18,60 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-  
+
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
 
-    <v-bottom-navigation
-      horizontal
-      height="10vh"
-      fixed
-      color="primary"
-      app
-    >
-      <v-app-bar-nav-icon 
-      @click.stop="sideDrawer = !sideDrawer" 
-      v-ripple="false"
-      plain
+    <v-bottom-navigation horizontal height="10vh" fixed color="primary" app>
+      <v-app-bar-nav-icon
+        @click.stop="sideDrawer = !sideDrawer"
+        v-ripple="false"
+        plain
       />
-        <v-btn v-for="(item, i) in buttomMenu"
-              :key="i"
-              :to="item.to"
-              v-ripple="false"
-              plain
-              >
-          <span>{{ item.title }}</span>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-btn>
+      <v-btn
+        v-for="(item, i) in buttomMenu"
+        :key="i"
+        :to="item.to"
+        v-ripple="false"
+        plain
+      >
+        <span>{{ item.title }}</span>
+        <v-icon>{{ item.icon }}</v-icon>
+      </v-btn>
       <v-spacer />
     </v-bottom-navigation>
-
   </v-app>
 </template>
 
 <script>
 export default {
-  name: 'DefaultLayout',
-  data () {
+  name: "DefaultLayout",
+  data() {
     return {
       sideDrawer: false,
       sideMenu: [
         {
-          icon: 'mdi-account',
-          title: 'Account',
-          to: '/account'
+          icon: "mdi-account",
+          title: "Account",
+          to: "/account",
         },
         {
-          icon: 'mdi-bell',
-          title: 'Notification',
-          to: '/notification'
-        }
+          icon: "mdi-bell",
+          title: "Notification",
+          to: "/notification",
+        },
       ],
       buttomMenu: [
         {
-          icon: 'mdi-application',
-          title: 'App',
-          to: '/'
-        }
+          icon: "mdi-application",
+          title: "App",
+          to: "/",
+        },
       ],
-    }
-  }
-}
+    };
+  },
+};
 </script>
